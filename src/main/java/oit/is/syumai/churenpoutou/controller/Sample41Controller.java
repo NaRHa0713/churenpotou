@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import oit.is.syumai.churenpoutou.model.Chamber;
 import oit.is.syumai.churenpoutou.model.ChamberMapper;
-
 
 /**
  * /sample3へのリクエストを扱うクラス authenticateの設定をしていれば， /sample3へのアクセスはすべて認証が必要になる
@@ -24,7 +22,6 @@ import oit.is.syumai.churenpoutou.model.ChamberMapper;
 @Controller
 @RequestMapping("/sample4")
 public class Sample41Controller {
-
 
   @Autowired
   ChamberMapper chamberMapper;
@@ -53,7 +50,8 @@ public class Sample41Controller {
 
     return "sample41.html";
   }
-    /**
+
+  /**
    *
    * @param model Thymeleafにわたすデータを保持するオブジェクト
    * @param prin  ログインユーザ情報が保持されるオブジェクト
@@ -74,5 +72,12 @@ public class Sample41Controller {
     model.addAttribute("chamber3", chamber3);
     // System.out.println("ID:" + chamber3.getId());
     return "sample41.html";
+  }
+
+  @PostMapping("step5")
+  public String sample45(@RequestParam Integer number, ModelMap model) {
+    ArrayList<Chamber> chambers5 = chamberMapper.selectAllByNumber(number);
+    model.addAttribute("chambers5", chambers5);
+    return "sample44.html";
   }
 }
