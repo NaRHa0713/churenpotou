@@ -34,6 +34,11 @@ public class Sample41Controller {
     return "sample41.html";
   }
 
+  @GetMapping("step4")
+  public String sample44() {
+    return "sample44.html";
+  }
+
   /**
    * 指定したidをPATHパラメータで受け取り，そのidに対応するデータを取得して返す
    *
