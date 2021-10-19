@@ -20,6 +20,17 @@
     number:[[${chamber2.number}]]
   </div>
 
+  数字で入室する小屋番号を入力してください
+  <form th:action="@{/sample4/step3}" method="post">
+    <input type="number" name="number" />
+    <input type="submit" value="入室"><input type="reset" value="リセット">
+  </form>
+  <p th:if="${chamber3}">
+    ID:[[${chamber3.id}]]
+    小屋番号:[[${chamber3.number}]]
+    ユーザ名:[[${chamber3.user}]]
+  </p>
+
 </body>
 
 </html>
